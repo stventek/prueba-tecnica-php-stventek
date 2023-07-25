@@ -37,3 +37,8 @@ Thumbs.db
 *.bak
 *.backup
 *.swp
+
+# phpunit cache files
+
+.phpunit.result.cache
+.phpunit.cache
