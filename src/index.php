@@ -12,4 +12,6 @@
     $userController = new UseCases($userRepository);
 
     $userController->createUser();
-
+    $userController->findUserById();
+    $userController->updateUser();
+    $userController->deleteUser();
