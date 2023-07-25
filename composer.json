@@ -1,6 +1,9 @@
 {
     "name": "stventek/prueba-tecnicaphp-stventek",
     "type": "project",
+    "scripts": {
+        "test": "phpunit src/tests/*"
+    },
     "autoload": {
         "psr-4": {
             "App\\": "src/"

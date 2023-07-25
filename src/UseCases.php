@@ -36,5 +36,59 @@ class UseCases
             echo "Error: " . $e->getMessage() . PHP_EOL;
         }
     }
+
+    public function findUserById()
+    {
+        try {
+            $userIdToFind = 1;
+            $user = $this->userRepository->getUserByIdOrFail($userIdToFind);
+            echo "User found with ID: " .
+                $user->getId() .
+                ", Name: " .
+                $user->getName() .
+                ", Email: " .
+                $user->getEmail() .
+                PHP_EOL;
+        } catch (UserNotFoundException $e) {
+            echo "Error: " . $e->getMessage() . PHP_EOL;
+        }
+    }
+
+    public function updateUser()
+    {
+        try {
+            $userIdToUpdate = 1;
+            $userToUpdate = [
+                "name" => "Updated Name",
+                "email" => "updated_email@example.com",
+            ];
+
+            $updatedUser = $this->userRepository->updateUser(
+                $userIdToUpdate,
+                $userToUpdate
+            );
+
+            echo "User updated successfully! ID: " .
+                $updatedUser->getId() .
+                ", Name: " .
+                $updatedUser->getName() .
+                ", Email: " .
+                $updatedUser->getEmail() .
+                PHP_EOL;
+        } catch (UserNotFoundException $e) {
+            echo "Error: " . $e->getMessage() . PHP_EOL;
+        }
+    }
+
+    public function deleteUser()
+    {
+        try {
+            $userIdToDelete = 1;
+            $this->userRepository->deleteUser($userIdToDelete);
+            echo "User deleted successfully!" . PHP_EOL;
+        } catch (UserNotFoundException $e) {
+            echo "Error: " . $e->getMessage() . PHP_EOL;
+        }
+    }
 }
 
