@@ -2,7 +2,8 @@
     "name": "stventek/prueba-tecnicaphp-stventek",
     "type": "project",
     "scripts": {
-        "test": "phpunit src/tests/*"
+        "test": "phpunit src/tests/*",
+        "start": "php src/index.php"
     },
     "autoload": {
         "psr-4": {

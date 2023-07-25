@@ -9,11 +9,13 @@ Simple PHP app that allows you to create, update, delete, and retrieve user info
 - Navigate to the project folder  
 `cd prueba-tecnicaphp-stventek`  
 - Install dependencies  
-`compose install`
+`composer install`
 - Run Composer autoloader generator
-`compose dump-autoload`
+`composer dump-autoload`
+- start the app
+`composer start`
 
 
 ## Running unit tests
 
-run `compose test`
+run `composer test`
